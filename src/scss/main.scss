@@ -2,6 +2,23 @@
 
 @use './basic/typography.scss';
 
+@use './layout/header';
+
+
+
 img {
-    width: 100%;
+    width: 100vw;
+    z-index: -1;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+    position: relative;
+    overflow-x: hidden;
+    margin: auto;
 }
