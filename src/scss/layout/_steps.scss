@@ -1,0 +1,45 @@
+@use '../basic/variables';
+
+.steps {
+  background-color: variables.$primary;
+  padding: 3em 0;
+
+  &__step {
+    position: relative;
+    padding: 1em 1.5em;
+    margin-bottom: 1.5em;
+
+    span {
+      font-family: 'Anton', sans-serif;
+      color: rgba(238, 238, 238, 0.116);
+      font-size: 7rem;
+      position: absolute;
+      top: -0.3em;
+      left: 0.1em;
+    }
+
+    h3 {
+      position: relative;
+      color: variables.$yellow;
+      letter-spacing: 0.5rem;
+      line-height: 2rem;
+      margin-bottom: 2em;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 5em;
+        height: 1px;
+        left: 0;
+        bottom: -1.1em;
+        background-color: variables.$white;
+      }
+    }
+
+    p {
+      color: variables.$white;
+      line-height: 2.5rem;
+      font-weight: 300;
+    }
+  }
+}

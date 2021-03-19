@@ -1,208 +1,211 @@
 @use '../basic/variables';
 
 .nav {
-    background-color: transparent;
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100vw;
-    height: 6vh;
-    padding-top: 0.3em;
-    padding-bottom: 0.4em;
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 6vh;
+  padding-top: 0.3em;
+  padding-bottom: 0.4em;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  z-index: 9999;
 
-    &--sticky {
-        position: fixed;
-        background-color: variables.$primary;
+  &--sticky {
+    position: fixed;
+    background-color: variables.$primary;
+  }
+
+  @media (min-width: 800px) {
+    align-items: center;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @media (min-width: 1100px) {
+    padding-top: 0.5em;
+    padding-right: 7.5em;
+    padding-bottom: 0;
+    padding-left: 7.5em;
+  }
+
+  &__logo {
+    color: variables.$yellow;
+    font-family: variables.$anton;
+    font-size: 3rem;
+    margin-top: 0.3em;
+    margin-left: 0.5em;
+  }
+
+  &__list {
+    background-color: white;
+    padding-bottom: 1em;
+    position: absolute;
+    width: 70%;
+    height: 100vh;
+    top: 0;
+    left: -70%;
+    transition: all 0.3s ease-in;
+    @media (min-width: 800px) {
+      position: relative;
+      width: auto;
+      padding-bottom: 0;
+      top: 0;
+      left: initial;
+      display: flex;
+      transition: none;
     }
+
+    div {
+      width: 100%;
+      height: 4em;
+      background-color: variables.$yellow;
+      margin-bottom: 2em;
+    }
+
+    li {
+      position: relative;
+      margin: 2em 0;
+      text-align: left;
+      z-index: 1;
+      color: white;
+
+      @media (min-width: 800px) {
+        transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
+        padding: 0.5em 0.5em;
+        margin: 0 1em 0 0;
+
+        &::before,
+        &::after {
+          content: '';
+          position: absolute;
+          left: 0;
+          height: 0;
+          width: 100%;
+          transition: inherit;
+        }
+
+        &::before {
+          bottom: 0;
+          border: 1px solid blue;
+          border-top: 0;
+          border-bottom: 0;
+        }
+
+        &::after {
+          top: 0;
+          height: 0;
+        }
+
+        &:hover {
+          & > a {
+            color: white;
+            transition-delay: 0.4s;
+          }
+        }
+
+        &:hover::before,
+        &:hover::after {
+          height: 100%;
+        }
+
+        &:hover::before {
+          transition-delay: 0s;
+        }
+
+        &:hover::after {
+          background: blue;
+          transition-delay: 0.25s;
+        }
+      }
+      a {
+        width: 80%;
+        padding: 0.5em 1em;
+        text-decoration: none;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &__checkbox {
+    background-color: rgb(150, 150, 150);
+    width: 3em;
+    height: 3em;
+    position: absolute;
+    top: 0.5em;
+    right: 0;
+    transform: translateX(-50%);
+    z-index: 2;
+    opacity: 0;
+    cursor: pointer;
 
     @media (min-width: 800px) {
-        align-items: center;
-        left: 50%;
-        transform: translateX(-50%);
+      display: none;
     }
 
-    @media (min-width: 1100px) {
-        padding-top: 0.5em;
-        padding-right: 7.5em;
-        padding-bottom: 0;
-        padding-left: 7.5em;
-    }
+    &:checked {
+      background-color: variables.$white;
 
-    &__logo {
-        color: variables.$yellow;
-        font-family: variables.$anton;
-        font-size: 3rem;
-        margin-top: 0.6em;
-        margin-left: .5em;
-    }
-
-    &__list {
-        background-color: white;
-        padding-bottom: 1em;
-        position: absolute;
-        width: 70%;
-        height: 100vh;
-        top: 0;
-        left: -70%;
-        transition: all 0.3s ease-in;
-        @media (min-width: 800px) {
-            position: relative;
-            width: auto;
-            padding-bottom: 0;
-            top: 0;
-            left: initial;
-            display: flex;
-            transition: none;
-        }
-
-        div {
-            width: 100%;
-            height: 4em;
-            background-color: variables.$yellow;
-            margin-bottom: 2em;
-        }
-
-        li {
-            position: relative;
-            margin: 2em 0;
-            text-align: left;
-            z-index: 1;
-            color: white;
-            @media (min-width: 800px) {
-                transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
-                padding: 0.5em 0.5em;
-                margin: 0 1em 0 0;
-
-                &::before,
-                &::after {
-                    content: '';
-                    position: absolute;
-                    left: 0;
-                    height: 0;
-                    width: 100%;
-                    transition: inherit;
-                    z-index: -1;
-                }
-
-                &::before {
-                    bottom: 0;
-                    border: 1px solid blue;
-                    border-top: 0;
-                    border-bottom: 0;
-                }
-
-                &::after {
-                    top: 0;
-                    height: 0;
-                }
-
-                &:hover {
-                & > a {
-                    color: white;
-                    transition-delay: 0.4s;
-                }
-                }
-
-                &:hover::before,
-                &:hover::after {
-                    height: 100%;
-                }
-
-                &:hover::before {
-                    transition-delay: 0s;
-                }
-
-                &:hover::after {
-                    background: blue;
-                    transition-delay: 0.25s;
-                }
-            }
-            a {
-                width: 80%;
-                padding: 0.5em 1em;
-                text-decoration: none;
-                color: black;
-                display: flex;
-                justify-content: space-between;
-            }
-        }
-    }
-
-    &__checkbox {
-        background-color: rgb(150, 150, 150);
-        width: 3em;
-        height: 3em;
-        position: absolute;
-        top: 1em;
-        right: 0;
-        transform: translateX(-50%);
-        z-index: 2;
-        opacity: 0;
-        @media (min-width: 800px) {
-            display: none;
-        }
-
-        &:checked {
-            background-color: variables.$white;
-
-            & + .nav__hamburger {
-            > div {
-                transform: rotate(225deg);
-                &::before,
-                &::after {
-                    top: 0;
-                    transform: rotate(90deg);
-                }
-
-                &::after {
-                    opacity: 0;
-                }
-            }
-        }
-
-            & ~ .nav__list {
-                transform: translateX(100%);
-            }
-        }
-    }
-
-    &__hamburger {
-        width: 2.5em;
-        height: 2em;
-        right: 0;
-        margin-top: 1em;
-        transform: translateX(-50%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        @media (min-width: 800px) {
-            display: none;
-        }
-
+      & + .nav__hamburger {
         > div {
-            position: relative;
-            background-color: variables.$white;
-            height: 0.2em;
-            transition: all 0.3s ease-in;
+          transform: rotate(225deg);
+          &::before,
+          &::after {
+            top: 0;
+            transform: rotate(90deg);
+          }
 
-            &::before,
-            &::after {
-                content: '';
-                position: absolute;
-                top: -0.7em;
-                left: 0;
-                width: 100%;
-                height: 0.2em;
-                background-color: variables.$white;
-                transition: all 0.3s ease-in;
-            }
-
-            &::after {
-                top: 0.7em;
-            }
+          &::after {
+            opacity: 0;
+          }
         }
+      }
+
+      & ~ .nav__list {
+        transform: translateX(100%);
+      }
     }
+  }
+
+  &__hamburger {
+    width: 2.5em;
+    height: 2em;
+    right: 0;
+    margin-top: 0.5em;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    @media (min-width: 800px) {
+      display: none;
+    }
+
+    > div {
+      position: relative;
+      background-color: variables.$white;
+      height: 0.2em;
+      transition: all 0.3s ease-in;
+
+      &::before,
+      &::after {
+        content: '';
+        position: absolute;
+        top: -0.7em;
+        left: 0;
+        width: 100%;
+        height: 0.2em;
+        background-color: variables.$white;
+        transition: all 0.3s ease-in;
+      }
+
+      &::after {
+        top: 0.7em;
+      }
+    }
+  }
 }

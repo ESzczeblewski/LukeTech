@@ -69,10 +69,10 @@ h2 {
   font-family: "Anton", sans-serif;
   letter-spacing: 0.5rem;
 }
-@media (max-width: 200px) {
+@media (max-width: 380px) {
   h1,
 h2 {
-    font-size: 20px;
+    font-size: 38px;
   }
 }
 @media (min-width: 1500px) {
@@ -94,6 +94,7 @@ h2 {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  z-index: 9999;
 }
 .nav--sticky {
   position: fixed;
@@ -118,7 +119,7 @@ h2 {
   color: #f2c014;
   font-family: "Anton", sans-serif;
   font-size: 3rem;
-  margin-top: 0.6em;
+  margin-top: 0.3em;
   margin-left: 0.5em;
 }
 .nav__list {
@@ -168,7 +169,6 @@ h2 {
     height: 0;
     width: 100%;
     transition: inherit;
-    z-index: -1;
   }
   .nav__list li::before {
     bottom: 0;
@@ -208,11 +208,12 @@ h2 {
   width: 3em;
   height: 3em;
   position: absolute;
-  top: 1em;
+  top: 0.5em;
   right: 0;
   transform: translateX(-50%);
   z-index: 2;
   opacity: 0;
+  cursor: pointer;
 }
 @media (min-width: 800px) {
   .nav__checkbox {
@@ -239,7 +240,7 @@ h2 {
   width: 2.5em;
   height: 2em;
   right: 0;
-  margin-top: 1em;
+  margin-top: 0.5em;
   transform: translateX(-50%);
   display: flex;
   flex-direction: column;
@@ -270,21 +271,184 @@ h2 {
   top: 0.7em;
 }
 
-img {
+@keyframes slide-in {
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+main {
+  position: relative;
+}
+
+.slides {
+  position: relative;
+  width: 100vw;
+  z-index: -1;
+  width: 100vw;
+  height: 80vh;
+}
+.slides__slide {
+  position: absolute;
+  height: inherit;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  z-index: 1;
+  transition: opacity 1s ease-in;
+}
+.slides__slide__first {
+  opacity: 0;
+  background: url("/hero_1_XL.a056dfcb.jpg");
+  background-size: cover;
+  background-position: 30%;
+}
+.slides__slide__second {
+  opacity: 0;
+  background: url("/hero_2_XL.a155d25f.jpg");
+  background-size: cover;
+  background-position: 50%;
+}
+.slides__slide__third {
+  opacity: 0;
+  background: url("/hero_3_XL.178c5d78.jpg");
+  background-size: cover;
+  background-position: 40%;
+}
+.slides__slide--active {
+  opacity: 1;
+}
+.slides__slide__desc {
+  position: relative;
+  text-align: center;
+  margin-bottom: 9.5em;
+  transform: translateY(-100%);
+  opacity: 0;
+  z-index: -1;
+}
+.slides__slide__desc--active {
+  animation-name: slide-in;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+}
+.slides__slide__desc::before {
+  content: "SPAWANIE";
+  font-family: "Anton", sans-serif;
+  color: rgba(238, 238, 238, 0.116);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  right: 0;
+  bottom: 0;
+  font-size: clamp(6em, 25vw, 150em);
+  z-index: -2;
+}
+.slides__slide__desc h1 {
+  margin-bottom: 0.5em;
+  line-height: 1.1em;
+}
+.slides__slide__desc h1 span {
+  color: #f2c014;
+}
+.slides__slide__desc p {
+  letter-spacing: 0.3em;
+}
+
+.slides-nav {
+  position: absolute;
+  bottom: 2em;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  z-index: 1;
+}
+.slides-nav__btn {
+  width: 2em;
+  height: 0.5em;
+  background-color: #ffffff;
+  margin-right: 0.5em;
+  border-radius: 2em;
+  color: #ffffff;
+  cursor: pointer;
+}
+.slides-nav__btn:hover, .slides-nav__btn:focus {
+  background-color: #f2c014;
+  color: #f2c014;
+}
+.slides-nav__btn--active {
+  background-color: #f2c014;
+}
+
+.steps {
+  background-color: #303849;
+  padding: 3em 0;
+}
+.steps__step {
+  position: relative;
+  padding: 1em 1.5em;
+  margin-bottom: 1.5em;
+}
+.steps__step span {
+  font-family: "Anton", sans-serif;
+  color: rgba(238, 238, 238, 0.116);
+  font-size: 7rem;
+  position: absolute;
+  top: -0.3em;
+  left: 0.1em;
+}
+.steps__step h3 {
+  position: relative;
+  color: #f2c014;
+  letter-spacing: 0.5rem;
+  line-height: 2rem;
+  margin-bottom: 2em;
+}
+.steps__step h3::before {
+  content: "";
+  position: absolute;
+  width: 5em;
+  height: 1px;
+  left: 0;
+  bottom: -1.1em;
+  background-color: #ffffff;
+}
+.steps__step p {
+  color: #ffffff;
+  line-height: 2.5rem;
+  font-weight: 300;
+}
+
+.img-cos {
   width: 100vw;
   z-index: -1;
 }
 
 html {
-  scroll-behavior: smooth;
+  width: 100vw;
 }
 
 body {
   font-family: "Roboto", sans-serif;
   box-sizing: border-box;
   position: relative;
-  overflow-x: hidden;
   margin: auto;
+  overflow-x: hidden;
+}
+
+.dark {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.822);
+  display: none;
+}
+
+.dark--active {
+  display: block;
 }
 
 /*# sourceMappingURL=/main.d9ee62f6.css.map */

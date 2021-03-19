@@ -13,6 +13,7 @@
     <title>Document</title>
 </head>
 <body>
+    <div class="dark"></div>
     <nav class="nav">
         <span class="nav__logo">LukeTech</span>
         <input class="nav__checkbox" type="checkbox" role="button" aria-expanded="false" />
@@ -29,52 +30,49 @@
         </ul>
     </nav>
     <main>
-        <ul>
-            <li>
-                <img src="./src/img/vendor/hero_1_XL.jpg" alt="">
-                <div>
-                    <h1>SPAWANIE STALI NIERDZEWNEJ</h1>
+        <ul class="slides">
+            <li class="slides__slide slides__slide__first slides__slide--active">
+                <div class="slides__slide__desc">
+                    <h1>SPAWANIE <span>STALI</span> NIERDZEWNEJ</h1>
                     <p>PROFESJONALIZM</p>
                 </div>
             </li>
-            <li>
-                <img src="./src/img/vendor/hero_2_XL.jpg" alt="">
-                <div>
-                    <h1>SPAWANIE STALI NIERDZEWNEJ</h1>
+            <li class="slides__slide slides__slide__second">
+                <div class="slides__slide__desc">
+                    <h1>SPAWANIE <span>STALI</span> NIERDZEWNEJ</h1>
                     <p>JAKOŚĆ</p>
                 </div>
             </li>
-            <li>
-                <img src="./src/img/vendor/hero_3_XL.jpg" alt="">
-                <div>
-                    <h1>SPAWANIE STALI NIERDZEWNEJ</h1>
+            <li class="slides__slide slides__slide__third">
+                <div class="slides__slide__desc">
+                    <h1>SPAWANIE <span>STALI</span> NIERDZEWNEJ</h1>
                     <p>TERMINOWOŚĆ</p>
                 </div>
             </li>
         </ul>
-        <ol>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
+        <ol class="slides-nav">
+            <li class="slides-nav__btn slides-nav__btn--active"></li>
+            <li class="slides-nav__btn"></li>
+            <li class="slides-nav__btn"></li>
         </ol>
     </main>
-    <section>
-        <div>
+    <section class="steps">
+        <div class="steps__step">
             <span>01</span>
             <h3>MASZ POMYSŁ?</h3>
             <p>Masz pomysł i koncepcję wykonania. Potrzebujesz nieszablonowego podejścia do realizowanego projektu. Ponad to nie wiesz jak się do tego zabrać?</p>
         </div>
-        <div>
+        <div class="steps__step">
             <span>02</span>
             <h3>ZADZWOŃ DO NAS</h3>
             <p>Wystarczy, że do Nas zadzwonisz. Opiszesz nam Swój projekt i jak widzisz jego wykonanie. A my zajmiemy się jego wykonaniem.</p>
         </div>
-        <div>
+        <div class="steps__step">
             <span>03</span>
             <h3>ZAPROJEKTUJEMY ROZWIĄZANIE</h3>
             <p>Wszystkie projekty dostosowujemy do indywidualnych potrzeb oraz odpowiednich wymogów.</p>
         </div>
-        <div>
+        <div class="steps__step">
             <span>04</span>
             <h3>WYKONAMY ZLECENIE NA CZAS</h3>
             <p>Zawsze dotrzymujemy terminów realizacji projektów. Jesteśmy do Państwa dyspozycji.</p>
@@ -107,7 +105,7 @@
         </div>
     </section>
     <section>
-        <img src="./src/img/vendor/contact-bg.jpg" alt="">
+        <img class="img-cos" src="./src/img/vendor/contact-bg.jpg" alt="">
         <div>
             <div>
                 <h2>MASZ PYTANIA?</h2>

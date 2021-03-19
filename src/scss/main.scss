@@ -3,22 +3,36 @@
 @use './basic/typography.scss';
 
 @use './layout/header';
+@use './layout/main';
+@use './layout/steps';
 
-
-
-img {
-    width: 100vw;
-    z-index: -1;
+.img-cos {
+  width: 100vw;
+  z-index: -1;
 }
 
 html {
-    scroll-behavior: smooth;
+  width: 100vw;
 }
 
 body {
-    font-family: 'Roboto', sans-serif;
-    box-sizing: border-box;
-    position: relative;
-    overflow-x: hidden;
-    margin: auto;
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+  position: relative;
+  margin: auto;
+  overflow-x: hidden;
+}
+
+.dark {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.822);
+  display: none;
+}
+
+.dark--active {
+  display: block;
 }
