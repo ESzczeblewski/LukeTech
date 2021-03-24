@@ -1,0 +1,99 @@
+@use '../basic/variables';
+
+.gallery {
+  padding: 2em 1em;
+  color: variables.$primary;
+  text-align: center;
+
+  &__heading {
+    margin-bottom: 4em;
+    h2 {
+      text-align: center;
+      margin-bottom: 0.5em;
+
+      span {
+        color: variables.$yellow;
+      }
+    }
+
+    p {
+      position: relative;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5rem;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 5em;
+        height: 1px;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: -1.5em;
+        background-color: variables.$yellow;
+      }
+    }
+  }
+
+  .masonry {
+    width: 100%;
+
+    &__item {
+      color: variables.$white;
+
+      img {
+        width: 100%;
+        display: block;
+      }
+
+      &__desc {
+        background-color: variables.$primary;
+        height: 12em;
+        padding: 0 1em;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+
+        h3 {
+          font-family: 'Anton', sans-serif;
+          letter-spacing: 0.3rem;
+          color: variables.$yellow;
+          margin-bottom: 0.5em;
+          font-size: 2.5rem;
+        }
+
+        p {
+          font-weight: 300;
+          line-height: 2.5rem;
+          margin-bottom: 1em;
+          text-align: left;
+        }
+
+        a {
+          color: variables.$white;
+          text-decoration: none;
+          background-color: transparent;
+          padding: 0.8em;
+          border: 1px solid variables.$yellow;
+          font-size: 1.5rem;
+          cursor: pointer;
+        }
+
+        &--yellow {
+          background-color: variables.$yellow;
+
+          h3,
+          p,
+          a {
+            color: variables.$primary;
+          }
+
+          a {
+            border-color: variables.$primary;
+          }
+        }
+      }
+    }
+  }
+}

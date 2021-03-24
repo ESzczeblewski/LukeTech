@@ -24,6 +24,7 @@ main {
 
     &__first {
       opacity: 0;
+      background: variables.$primary;
       background: url('../../src/img/vendor/hero_1_XL.jpg');
       background-size: cover;
       background-position: 30%;
@@ -31,6 +32,7 @@ main {
 
     &__second {
       opacity: 0;
+      background: variables.$primary;
       background: url('../../src/img/vendor/hero_2_XL.jpg');
       background-size: cover;
       background-position: 50%;
@@ -38,6 +40,7 @@ main {
 
     &__third {
       opacity: 0;
+      background: variables.$primary;
       background: url('../../src/img/vendor/hero_3_XL.jpg');
       background-size: cover;
       background-position: 40%;

@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./src/scss/main.scss">
 
-    <title>Document</title>
+    <title>LukeTech Company</title>
 </head>
 <body>
     <div class="dark"></div>
@@ -22,17 +22,17 @@
         </div>
         <ul class="nav__list">
             <div></div>
-            <li><a href="#">Strona główna<span>></span></a></li>
-            <li><a href="#">O nas<span>></span></a></li>
-            <li><a href="#">Oferta<span>></span></a></li>
-            <li><a href="#">Galeria<span>></span></a></li>
+            <li><a href="#home">Strona główna<span>></span></a></li>
+            <li><a href="#steps">O nas<span>></span></a></li>
+            <li><a href="#services">Oferta<span>></span></a></li>
+            <li><a href="#gallery">Galeria<span>></span></a></li>
             <li><a href="#">Kontakt<span>></span></a></li>
         </ul>
     </nav>
-    <main>
+    <main id="home">
         <ul class="slides">
             <li class="slides__slide slides__slide__first slides__slide--active">
-                <div class="slides__slide__desc">
+                <div class="slides__slide__desc slides__slide__desc--active">
                     <h1>SPAWANIE <span>STALI</span> NIERDZEWNEJ</h1>
                     <p>PROFESJONALIZM</p>
                 </div>
@@ -56,7 +56,7 @@
             <li class="slides-nav__btn"></li>
         </ol>
     </main>
-    <section class="steps">
+    <section class="steps" id="steps">
         <div class="steps__step">
             <span>01</span>
             <h3>MASZ POMYSŁ?</h3>
@@ -78,85 +78,116 @@
             <p>Zawsze dotrzymujemy terminów realizacji projektów. Jesteśmy do Państwa dyspozycji.</p>
         </div>
     </section>
-    <section>
-        <div>
-            <h2>NASZE USŁUGI</h2>
+    <section class="services" id="services">
+        <div class="services__heading">
+            <h2>NASZE <span>USŁUGI</span></h2>
             <p>OFERTA LUKETECH</p>
         </div>
-        <div>
+        <div class="services__service">
             <span>01</span>
-            <h3>NAZWA USŁUGI 1</h3>
+            <h3><span>NAZWA</span> USŁUGI</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam recusandae neque.</p>
         </div>
-        <div>
+        <div class="services__service">
             <span>02</span>
-            <h3>NAZWA USŁUGI 2</h3>
+            <h3><span>NAZWA</span> USŁUGI</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam recusandae neque.</p>
         </div>
-        <div>
+        <div class="services__service">
             <span>03</span>
-            <h3>NAZWA USŁUGI 3</h3>
+            <h3><span>NAZWA</span> USŁUGI</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam recusandae neque.</p>
         </div>
-        <div>
+        <div class="services__service">
             <span>04</span>
-            <h3>NAZWA USŁUGI 4</h3>
+            <h3><span>NAZWA</span> USŁUGI</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At numquam recusandae neque.</p>
         </div>
     </section>
-    <section>
-        <img class="img-cos" src="./src/img/vendor/contact-bg.jpg" alt="">
-        <div>
-            <div>
-                <h2>MASZ PYTANIA?</h2>
-                <p>WYŚLIJ WIADOMOŚĆ</p>
+    <section class="gallery" id="gallery">
+        <div class="gallery__heading">
+            <h2>NASZE<span> USŁUGI</span></h2>
+            <p>OFERTA LUKETECH</p>
+        </div>
+        <div class="masonry">
+            <div class="masonry__item">
+                <img src="./src/img/vendor/moze-gdzies.jpg" alt="">
+                <div class="masonry__item__desc">
+                    <h3>Projekt</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#">Zobacz wszystkie</a>
+                </div>
+            </div>
+            <div class="masonry__item">
+                <img src="./src/img/vendor/moze-gdzies.jpg" alt="">
+                <div class="masonry__item__desc masonry__item__desc--yellow">
+                    <h3>Projekt</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#">Zobacz wszystkie</a>
+                </div>
+            </div>
+            <div class="masonry__item">
+                <img src="./src/img/vendor/moze-gdzies.jpg" alt="">
+                <div class="masonry__item__desc">
+                    <h3>Projekt</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#">Zobacz wszystkie</a>
+                </div>
             </div>
         </div>
-        <form action="/">
-            <div>
-                <label for="name">Imię i nazwisko</label>
+    </section>
+    <section class="contact">
+        <img class="img-cos" src="./src/img/vendor/contact-bg.jpg" alt="">
+        <div class="contact__heading">
+            <h2>MASZ <span>PYTANIE?</span></h2>
+            <p>WYŚLIJ WIADOMOŚĆ</p>
+        </div>
+        <form action="/" class="contact__form">
+            <div class="contact__form__box">
                 <input type="text" name="name" required>
+                <label for="name">Imię i nazwisko</label>
             </div>
-            <div>
-                <label for="email">E-mail</label>
+            <div class="contact__form__box">
                 <input type="text" name="email" required>
+                <label for="email">E-mail</label>
             </div>
-            <div>
-                <label for="subject">Temat</label>
+            <div class="contact__form__box">
                 <input type="text" name="subject" required>
+                <label for="subject">Temat</label>
             </div>
-            <div>
-                <label for="message">Imię i nazwisko</label>
+            <div class="contact__form__box">
                 <textarea name="message" cols="15" rows="5" required></textarea>
+                <label for="message">Imię i nazwisko</label>
             </div>
-            <button type="submit">Wyślij</button>
+            <button class="contact__form__btn" type="submit">Wyślij</button>
         </form>
     </section>
-    <footer>
-        <div>
+    <footer class="footer">
+        <div class="footer__info">
             <span>LUKETECH</span>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis illo aperiam reiciendis delectus necessitatibus esse ea provident. Aspernatur sed suscipit quaerat quia. Saepe et similique unde dolor dolore eum veritatis.</p>
         </div>
-        <div>
+        <div class="footer__contact">
             <h3>KONTAKT</h3>
-            <div>
-                <span>tu pin</span>
-                <p>Tutaj adres firmy</p>
+            <div class="contact__box">
+                <ion-icon name="map-outline"></ion-icon>
+                <p>ul. Lelewela 54 <br>08-430 Żelechów</p>
             </div>
-            <div>
-                <span>tu ikona</span>
-                <p>Łukasz: +48 514 633 730</p>
+            <div class="contact__box">
+                <ion-icon name="call-outline"></ion-icon>
+                <a href="callto:+48-514-633-730">Łukasz: +48 514 633 730</a>
             </div>
-            <div>
-                <span>tu ikona</span>
-                <p>Konrad: +48 505 745 892</p>
+            <div class="contact__box">
+                <ion-icon name="call-outline"></ion-icon>
+                <a href="callto:+48-505-745-892">Konrad: +48 505 745 892</a>
             </div>
-            <div>
-                <span>tu ikona</span>
-                <p>luketech@luketech.pl</p>
+            <div class="contact__box">
+                <ion-icon name="mail-outline"></ion-icon>
+                <a href="mailto:luketech@luketech.pl">luketech@luketech.pl</a>
             </div>
         </div>
     </footer>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
     <script src="./src/js/main.js"></script>
 </body>
 </html>

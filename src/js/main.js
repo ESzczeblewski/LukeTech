@@ -23,6 +23,25 @@ hamburger.addEventListener('click', () => {
     }, 300);
 });
 
+if (hamburger.checked == 1) {
+    darkDiv.classList.add('dark--active');
+}
+
+// Close nav list after click
+
+const navLinks = Array.from(document.querySelectorAll('.nav__list li a'));
+
+navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.checked = 0;
+        setTimeout(() => {
+            darkDiv.classList.toggle('dark--active')
+        }, 300);
+    })
+})
+
+
+
 // Small NAVIGATION
 
 const slidesArr = Array.from(document.querySelectorAll(".slides__slide"));
@@ -53,5 +72,3 @@ slidesButtons.forEach((btn, index) => btn.addEventListener('click', () => {
         }
     })
 }))
-
-// DODAĆ STYLE DO PRZYCISKÓW
