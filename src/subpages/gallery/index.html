@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./scss/main.scss">
+
+    <title>LukeTech Company</title>
+</head>
+<body>
+    <div class="dark"></div>
+    <nav class="nav">
+        <span class="nav__logo">LukeTech</span>
+        <input class="nav__checkbox" type="checkbox" role="button" aria-expanded="false" />
+        <div class="nav__hamburger">
+            <div></div>
+        </div>
+        <ul class="nav__list">
+            <div></div>
+            <li><a href="../../index.html">Strona główna<span>></span></a></li>
+            <li><a href="#contact-info">Kontakt<span>></span></a></li>
+        </ul>
+    </nav>
+    <section class="gallery" id="gallery">
+        <div class="gallery__heading">
+            <h2>NASZE<span> PROJEKTY</span></h2>
+            <p>REALIZACJE LUKETECH</p>
+        </div>
+        <div class="masonry">
+            <div class="masonry__item">
+                <img src="../../img/vendor/moze-gdzies.jpg" alt="">
+                <div class="masonry__item__desc">
+                    <h3>Projekt</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#">Zobacz wszystkie</a>
+                </div>
+            </div>
+            <div class="masonry__item masonry__item--order">
+                <img src="../../img/vendor/moze-gdzies.jpg" alt="">
+                <div class="masonry__item__desc masonry__item__desc--yellow">
+                    <h3>Projekt</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#">Zobacz wszystkie</a>
+                </div>
+            </div>
+            <div class="masonry__item">
+                <img src="../../img/vendor/moze-gdzies.jpg" alt="">
+                <div class="masonry__item__desc">
+                    <h3>Projekt</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+                    <a href="#">Zobacz wszystkie</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="footer" id="contact-info">
+        <h3>KONTAKT</h3>
+        <div class="footer__contact">
+            <div class="contact__box">
+                <ion-icon name="map-outline"></ion-icon>
+                <p>ul. Lelewela 54 <br>08-430 Żelechów</p>
+            </div>
+            <div class="contact__box">
+                <ion-icon name="call-outline"></ion-icon>
+                <a href="callto:+48-514-633-730">Łukasz: +48 514 633 730</a>
+            </div>
+            <div class="contact__box">
+                <ion-icon name="call-outline"></ion-icon>
+                <a href="callto:+48-505-745-892">Konrad: +48 505 745 892</a>
+            </div>
+            <div class="contact__box">
+                <ion-icon name="mail-outline"></ion-icon>
+                <a href="mailto:luketech@luketech.pl">luketech@luketech.pl</a>
+            </div>
+        </div>
+    </footer>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="../../js/main.js"></script>
+</body>
+</html>

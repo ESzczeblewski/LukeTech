@@ -1,0 +1,11 @@
+@use '../../../scss/lib/reset.css';
+@use '../../../scss/basic/typography';
+@use '../../../scss/basic/variables.scss';
+
+@use '../../../scss/layout/header';
+@use '../../../scss/layout/gallery';
+@use '../../../scss/layout/footer';
+
+.gallery {
+  margin-top: 5em;
+}

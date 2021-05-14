@@ -5,31 +5,25 @@
   background-color: variables.$primary;
   color: variables.$white;
 
-  &__info {
-    margin-bottom: 2em;
-    span {
-      display: block;
-      color: variables.$yellow;
-      font-family: variables.$anton;
-      font-size: 3rem;
-      letter-spacing: 0.1rem;
-      margin-bottom: 1em;
-    }
+  @media screen and (min-width: 800px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 
-    p {
-      line-height: 2rem;
-      font-weight: 300;
-    }
+  h3 {
+    display: block;
+    color: variables.$yellow;
+    font-family: variables.$anton;
+    font-size: 3rem;
+    letter-spacing: 0.1rem;
+    margin-bottom: 1em;
   }
 
   &__contact {
-    h3 {
-      display: block;
-      color: variables.$yellow;
-      font-family: variables.$anton;
-      font-size: 3rem;
-      letter-spacing: 0.1rem;
-      margin-bottom: 1em;
+    @media screen and (min-width: 800px) {
+      display: flex;
+      flex-wrap: wrap;
     }
 
     .contact__box {
@@ -38,6 +32,10 @@
       border-bottom: 1px solid variables.$light-primary;
       margin-bottom: 1em;
       padding-bottom: 0.5em;
+
+      @media screen and (min-width: 800px) {
+        margin-right: 2em;
+      }
 
       ion-icon {
         color: variables.$yellow;

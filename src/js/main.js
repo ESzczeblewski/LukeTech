@@ -35,7 +35,9 @@ navLinks.forEach(link => {
     link.addEventListener('click', () => {
         hamburger.checked = 0;
         setTimeout(() => {
-            darkDiv.classList.toggle('dark--active')
+            if (window.screen.width < 800) {
+                darkDiv.classList.toggle('dark--active')
+            }
         }, 300);
     })
 })
@@ -43,32 +45,32 @@ navLinks.forEach(link => {
 
 
 // Small NAVIGATION
+import Splide from '@splidejs/splide';
 
-const slidesArr = Array.from(document.querySelectorAll(".slides__slide"));
+const slidesDesc = Array.from(document.querySelectorAll('.splide__slide__desc'));
 
-const slidesButtons = Array.from(document.querySelectorAll('.slides-nav__btn'));
 
-const slidesDesc = Array.from(document.querySelectorAll('.slides__slide__desc'));
+const heroSlides = new Splide( '.splide', {
+    cover: true,
+    fixedHeight: '90vh',
+    type: 'loop',
+    autoplay: true,
+    interval: 5000,
+});
 
-slidesButtons.forEach((btn, index) => btn.addEventListener('click', () => {
+heroSlides.on('mounted', function() {
+    slidesDesc[0].classList.add('splide__slide__desc--active');
+});
 
-    slidesButtons.forEach(btn => btn.classList.remove('slides-nav__btn--active'));
-
-    btn.classList.add('slides-nav__btn--active')
-
-    slidesArr.forEach((slide, slideIndex) => {
-        slide.classList.remove('slides__slide--active');
-
-        if (slideIndex === index) {
-            slide.classList.add('slides__slide--active');
-        }
-    })
+heroSlides.on('moved', function(newIndex) {
 
     slidesDesc.forEach((desc, descIndex) => {
-        desc.classList.remove('slides__slide__desc--active');
+        desc.classList.remove('splide__slide__desc--active');
 
-        if (descIndex === index) {
-            desc.classList.add('slides__slide__desc--active');
+        if (descIndex == newIndex) {
+            desc.classList.add('splide__slide__desc--active')
         }
     })
-}))
+})
+
+heroSlides.mount();

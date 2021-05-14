@@ -1,17 +1,16 @@
 @use '../basic/variables';
 
 .nav {
-  background-color: transparent;
+  background-color: variables.$primary;
   position: absolute;
   top: 0;
-  left: 0;
-  width: 100vw;
-  height: 6vh;
-  padding-top: 0.3em;
-  padding-bottom: 0.4em;
+  right: 0;
+  width: 100%;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  // align-items: flex-start;
   z-index: 9999;
 
   &--sticky {
@@ -21,15 +20,11 @@
 
   @media (min-width: 800px) {
     align-items: center;
-    left: 50%;
-    transform: translateX(-50%);
+    left: 0;
   }
 
-  @media (min-width: 1100px) {
-    padding-top: 0.5em;
-    padding-right: 7.5em;
-    padding-bottom: 0;
-    padding-left: 7.5em;
+  @media (min-width: 1200px) {
+    padding: 1em 0;
   }
 
   &__logo {
@@ -37,7 +32,12 @@
     font-family: variables.$anton;
     font-size: 3rem;
     margin-top: 0.3em;
-    margin-left: 0.5em;
+    margin-left: 1em;
+
+    @media (min-width: 800px) {
+      margin-top: 0;
+      margin-left: 2em;
+    }
   }
 
   &__list {
@@ -50,11 +50,13 @@
     left: -70%;
     transition: all 0.3s ease-in;
     @media (min-width: 800px) {
+      background-color: transparent;
       position: relative;
       width: auto;
       padding-bottom: 0;
-      top: 0;
-      left: initial;
+      margin-right: 3em;
+      left: unset;
+      height: auto;
       display: flex;
       transition: none;
     }
@@ -64,6 +66,10 @@
       height: 4em;
       background-color: variables.$yellow;
       margin-bottom: 2em;
+
+      @media (min-width: 800px) {
+        display: none;
+      }
     }
 
     li {
@@ -75,59 +81,25 @@
 
       @media (min-width: 800px) {
         transition: all 0.2s cubic-bezier(0.77, 0, 0.175, 1);
-        padding: 0.5em 0.5em;
-        margin: 0 1em 0 0;
-
-        &::before,
-        &::after {
-          content: '';
-          position: absolute;
-          left: 0;
-          height: 0;
-          width: 100%;
-          transition: inherit;
-        }
-
-        &::before {
-          bottom: 0;
-          border: 1px solid blue;
-          border-top: 0;
-          border-bottom: 0;
-        }
-
-        &::after {
-          top: 0;
-          height: 0;
-        }
-
-        &:hover {
-          & > a {
-            color: white;
-            transition-delay: 0.4s;
-          }
-        }
-
-        &:hover::before,
-        &:hover::after {
-          height: 100%;
-        }
-
-        &:hover::before {
-          transition-delay: 0s;
-        }
-
-        &:hover::after {
-          background: blue;
-          transition-delay: 0.25s;
-        }
+        margin: 0;
       }
       a {
         width: 80%;
-        padding: 0.5em 1em;
+        padding-top: 0.5em;
+        padding-bottom: 0.5em;
+        padding-left: 1em;
+        padding-right: 1em;
         text-decoration: none;
         color: black;
-        display: flex;
-        justify-content: space-between;
+        font-weight: 300;
+
+        @media (min-width: 800px) {
+          color: variables.$white;
+
+          span {
+            display: none;
+          }
+        }
       }
     }
   }
